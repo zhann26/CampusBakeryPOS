@@ -1,309 +1,166 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Campus Bakery | Point of Sale System</title>
-
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAKE. — Campus Bakery POS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
 
-    <div class="app-container">
+  <div class="site-shell">
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
+    <!-- MINIMAL NAVIGATION -->
+    <header class="site-header">
+      <a class="site-logo" href="#home" aria-label="BAKE home">
+        BAKE<span>.</span>
+      </a>
 
-            <div class="brand">
-                <div class="brand-logo">CB</div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#products-section">The Menu</a>
+        <a href="#cart-section">Your Order</a>
+        <a href="#receipt-section">Receipt</a>
+      </nav>
 
-                <div class="brand-info">
-                    <h2>Campus Bakery</h2>
-                    <p>Point of Sale System</p>
-                </div>
+      <span class="header-label">CAMPUS BAKERY / POS</span>
+    </header>
+
+    <main id="home">
+
+      <!-- HERO SECTION -->
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">FRESHLY BAKED. SIMPLY SERVED.</p>
+          <h1>Good things<br>start <em>here.</em></h1>
+          <p class="hero-description">
+            Your everyday bakery favorites, made simple.
+            Choose what you love and we'll take care of the rest.
+          </p>
+          <a class="hero-link" href="#products-section">
+            Explore our menu <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-art-inner">
+            <span class="hero-art-top">BAKED WITH CARE</span>
+            <span class="hero-art-symbol">B.</span>
+            <span class="hero-art-bottom">A LITTLE JOY IN EVERY BITE</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ORDERING WORKSPACE -->
+      <div class="workspace">
+
+        <!-- PRODUCT CATALOG -->
+        <section class="menu-section" id="products-section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">01 / THE SELECTION</p>
+              <h2>Today's menu<span class="heading-period">.</span></h2>
+              <p class="section-description">
+                Six favorites. One delicious decision.
+              </p>
+            </div>
+            <span class="item-counter">06 ITEMS</span>
+          </div>
+
+          <div id="products" class="products-grid"></div>
+        </section>
+
+        <!-- CART + PAYMENT -->
+        <aside class="checkout-column" id="cart-section">
+
+          <section class="order-card">
+            <div class="order-card-header">
+              <p class="eyebrow">02 / YOUR SELECTION</p>
+              <h2>Your order<span class="heading-period">.</span></h2>
+              <p>Everything you picked, all in one place.</p>
             </div>
 
-            <div class="sidebar-menu">
-
-                <p class="menu-label">MAIN MENU</p>
-
-                <a href="#dashboard" class="menu-item active">
-                    <span>▦</span>
-                    <span>Dashboard</span>
-                </a>
-
-                <a href="#products-section" class="menu-item">
-                    <span>▤</span>
-                    <span>Products</span>
-                </a>
-
-                <a href="#cart-section" class="menu-item">
-                    <span>▣</span>
-                    <span>Shopping Cart</span>
-                </a>
-
-                <a href="#receipt-section" class="menu-item">
-                    <span>▧</span>
-                    <span>Digital Receipt</span>
-                </a>
-
+            <div id="cart" class="cart-items">
+              <div class="empty-cart">
+                Your shopping cart is empty.
+              </div>
             </div>
 
-            <div class="sidebar-footer">
+            <div class="order-summary">
+              <span>Order total</span>
+              <strong id="total">₱0.00</strong>
+            </div>
+          </section>
 
-                <div class="system-status">
-                    <span class="status-dot"></span>
-                    System Operational
-                </div>
+          <section class="payment-card" id="payment-section">
+            <p class="eyebrow">03 / CHECKOUT</p>
+            <h3>Make it yours.</h3>
+            <p class="payment-description">
+              Almost there. Enter the cash received to complete the order.
+            </p>
 
-                <p>IT415 Midterm Practical</p>
-                <small>Campus Bakery POS System</small>
+            <label for="cash">CASH RECEIVED</label>
 
+            <div class="cash-input-container">
+              <span class="peso-symbol">₱</span>
+              <input
+                type="number"
+                id="cash"
+                placeholder="0.00"
+                min="0"
+                step="0.01"
+                inputmode="decimal"
+              >
             </div>
 
+            <button id="payBtn" class="payment-button">
+              Complete payment <span aria-hidden="true">↗</span>
+            </button>
+
+            <p id="message" class="payment-message" role="status"></p>
+            <p class="payment-note">CASH PAYMENTS ONLY</p>
+          </section>
         </aside>
-
-
-        <!-- MAIN CONTENT -->
-        <main class="main-content" id="dashboard">
-
-            <!-- HEADER -->
-            <header class="topbar">
-
-                <div>
-                    <p class="page-label">
-                        CAMPUS BAKERY / POINT OF SALE
-                    </p>
-
-                    <h1>Point of Sale</h1>
-
-                    <p class="page-description">
-                        Process bakery orders and manage customer transactions.
-                    </p>
-                </div>
-
-                <div class="topbar-status">
-                    <span class="status-dot"></span>
-                    Ready for Transactions
-                </div>
-
-            </header>
-
-
-            <!-- POS DASHBOARD -->
-            <div class="dashboard-grid">
-
-                <!-- LEFT CONTENT -->
-                <div class="left-content">
-
-                    <!-- PRODUCT SECTION -->
-                    <section class="panel products-panel"
-                             id="products-section">
-
-                        <div class="section-header">
-
-                            <div>
-                                <p class="section-label">
-                                    PRODUCT CATALOG
-                                </p>
-
-                                <h2>Available Products</h2>
-
-                                <p>
-                                    Select bakery products to add to your order.
-                                </p>
-                            </div>
-
-                            <span class="product-count">
-                                6 Products
-                            </span>
-
-                        </div>
-
-                        <!-- PRODUCTS GENERATED BY JAVASCRIPT -->
-                        <div id="products" class="products-grid"></div>
-
-                    </section>
-
-
-                    <!-- RECEIPT SECTION -->
-                    <section class="panel receipt-panel"
-                             id="receipt-section">
-
-                        <div class="section-header">
-
-                            <div>
-                                <p class="section-label">
-                                    TRANSACTION RECORD
-                                </p>
-
-                                <h2>Digital Receipt</h2>
-
-                                <p>
-                                    Your completed transaction will appear here.
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <div class="receipt-container">
-
-                            <div id="receipt">
-                                No completed transaction.
-                            </div>
-
-                        </div>
-
-                        <button id="newBtn"
-                                class="new-transaction-btn">
-
-                            + New Transaction
-
-                        </button>
-
-                    </section>
-
-                </div>
-
-
-                <!-- RIGHT CONTENT -->
-                <div class="right-content">
-
-                    <!-- SHOPPING CART -->
-                    <section class="panel cart-panel"
-                             id="cart-section">
-
-                        <div class="section-header">
-
-                            <div>
-                                <p class="section-label">
-                                    CURRENT ORDER
-                                </p>
-
-                                <h2>Shopping Cart</h2>
-
-                                <p>
-                                    Review selected products before checkout.
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <!-- CART GENERATED BY JAVASCRIPT -->
-                        <div id="cart" class="cart-items">
-
-                            <div class="empty-cart">
-                                Your shopping cart is empty.
-                            </div>
-
-                        </div>
-
-
-                        <!-- ORDER SUMMARY -->
-                        <div class="order-summary">
-
-                            <p class="section-label">
-                                ORDER SUMMARY
-                            </p>
-
-                            <div class="summary-row">
-
-                                <span>Total Amount</span>
-
-                                <strong id="total">
-                                    ₱0.00
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-                    </section>
-
-
-                    <!-- PAYMENT SECTION -->
-                    <section class="panel payment-panel"
-                             id="payment-section">
-
-                        <div class="section-header">
-
-                            <div>
-                                <p class="section-label">
-                                    CHECKOUT
-                                </p>
-
-                                <h2>Cash Payment</h2>
-
-                                <p>
-                                    Enter the amount received from the customer.
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <label for="cash">
-                            Amount Received
-                        </label>
-
-                        <div class="cash-input-container">
-
-                            <span class="peso-symbol">
-                                ₱
-                            </span>
-
-                            <input
-                                type="number"
-                                id="cash"
-                                placeholder="0.00"
-                                min="0"
-                                step="0.01"
-                            >
-
-                        </div>
-
-                        <button id="payBtn"
-                                class="payment-button">
-
-                            Confirm Payment →
-
-                        </button>
-
-                        <!-- PAYMENT VALIDATION MESSAGE -->
-                        <p id="message"
-                           class="payment-message"
-                           role="status"></p>
-
-                        <div class="payment-footer">
-                            Cash Payment Only
-                        </div>
-
-                    </section>
-
-                </div>
-
-            </div>
-
-
-            <!-- FOOTER -->
-            <footer class="main-footer">
-
-                <p>
-                    Campus Bakery POS System
-                </p>
-
-                <p>
-                    IT415 - Application Development
-                </p>
-
-            </footer>
-
-        </main>
-
-    </div>
+      </div>
+
+      <!-- RECEIPT -->
+      <section class="receipt-section" id="receipt-section">
+        <div class="receipt-intro">
+          <p class="eyebrow">04 / THE LITTLE DETAILS</p>
+          <h2>Order complete<span class="heading-period">.</span></h2>
+          <p>
+            Your digital receipt will appear here
+            once your payment is confirmed.
+          </p>
+
+          <button id="newBtn" class="new-transaction-btn">
+            Start a new order <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+
+        <div class="receipt-paper">
+          <div class="receipt-paper-heading">
+            <strong>BAKE.</strong>
+            <span>CAMPUS BAKERY</span>
+          </div>
+
+          <div id="receipt" class="receipt-content">
+            No completed transaction.
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <strong>BAKE.</strong>
+      <span>Campus Bakery Point of Sale</span>
+      <span>IT415 / MIDTERM PRACTICAL</span>
+    </footer>
+
+  </div>
 
 </body>
 </html>

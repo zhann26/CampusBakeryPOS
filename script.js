@@ -3,14 +3,16 @@
 
 // CAMPUS BAKERY POS — PRODUCT CATALOG
 
+
 const products = [
-  { id: 1, name: "Pandesal (pack of 5)", price: 25 },
-  { id: 2, name: "Ensaymada", price: 20 },
-  { id: 3, name: "Spanish Bread", price: 15 },
-  { id: 4, name: "Chocolate Cupcake", price: 30 },
-  { id: 5, name: "Loaf Bread", price: 55 },
-  { id: 6, name: "Brewed Coffee (cup)", price: 25 }
+  { id: 1, name: "Pandesal (pack of 5)", price: 25, image: "images/pandesal.jpg" },
+  { id: 2, name: "Ensaymada", price: 20, image: "images/ensaymada.jpg" },
+  { id: 3, name: "Spanish Bread", price: 15, image: "images/spanish-bread.jpg" },
+  { id: 4, name: "Chocolate Cupcake", price: 30, image: "images/cupcake.jpg" },
+  { id: 5, name: "Loaf Bread", price: 55, image: "images/loaf-bread.jpg" },
+  { id: 6, name: "Brewed Coffee (cup)", price: 25, image: "images/coffee.jpg" }
 ];
+
 
 let cart = [];
 let paid = false;
@@ -30,6 +32,16 @@ function showProducts() {
   products.forEach(product => {
     const card = document.createElement("div");
     card.className = "product-card";
+
+    
+const image = document.createElement("img");
+image.src = product.image;
+image.alt = product.name;
+image.className = "product-image";
+image.loading = "lazy";
+
+card.appendChild(image);
+
 
     const details = document.createElement("div");
 

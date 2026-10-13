@@ -47,18 +47,21 @@ The application features a modern, minimalist bakery storefront design branded a
 11. Generates a digital receipt containing purchased items, quantities, subtotals, total, cash received, change, date, and a transaction reference.
 12. Supports new transactions by resetting the cart, payment input, and receipt.
 
+
 ## How to Run the Application
 
-1. Download or clone this repository.
-2. Open the `CampusBakeryPOS` folder in Visual Studio Code.
-3. Open `index.html` in a web browser, or use the Live Server extension.
-4. Select products using the **Add to Cart** buttons.
-5. Adjust quantities using the **+** and **−** buttons or remove unwanted products.
-6. Review the total amount in the shopping cart.
-7. Enter the customer's cash payment.
-8. Click **Confirm Payment**.
-9. Review the digital receipt and change.
-10. Click **New Transaction** to begin another order.
+1. Download or clone this GitHub repository.
+2. Open the project folder in Visual Studio Code.
+3. Open `index.html` in a web browser using the Live Server extension.
+4. Browse the six bakery products displayed in the menu.
+5. Click **+ Add to Cart** to select products.
+6. Use the **+** and **−** buttons to adjust quantities or remove unwanted products.
+7. Review the order summary and total amount.
+8. Enter the customer's cash payment in the **Cash Received** field.
+9. Click **Complete payment** to process the transaction.
+10. Review the payment confirmation and digital receipt, including the total, cash received, and change.
+11. Click **Start a new order** to begin another transaction.
+
 
 ## Example Transaction
 
@@ -71,10 +74,10 @@ The application features a modern, minimalist bakery storefront design branded a
 **Cash Received:** ₱100.00  
 **Change:** ₱20.00
 
+
 ## Project Structure
 
 ```text
-
 Campus Bakery POS/
 ├── index.html
 ├── style.css
@@ -94,10 +97,12 @@ Campus Bakery POS/
     ├── 03-payment-validation.png
     ├── 04-digital-receipt.png
     └── 05-github-commits.png
-
 ```
 
-The `screenshots/` folder will contain evidence of the completed application and GitHub commit history.
+The `images/` folder contains the product photographs used in the bakery catalog.
+
+The `screenshots/` folder contains evidence of the completed application, including the product catalog, shopping cart, payment validation, digital receipt, and GitHub commit history.
+
 
 ## AI-Assisted Development
 
@@ -105,14 +110,23 @@ AI assistance was used during the development process for code generation, inter
 
 All generated code was incorporated into the project and tested as part of the development workflow.
 
+
 ## Development and Version Control
 
-Git was used to record meaningful development milestones, including:
+Git and GitHub were used to track the development progress of the Campus Bakery POS System.
 
-- Initial project interface
-- Product catalog, shopping cart, and payment functionality
-- Payment validation and transaction error handling
-- Project documentation and final submission preparation
+The project includes the following development milestones:
+
+- Initial HTML, CSS, and JavaScript interface.
+- Product catalog and shopping cart functionality.
+- Quantity adjustment, item removal, and automatic total calculations.
+- Cash payment validation and digital receipt generation.
+- README and AI-assisted development documentation.
+- Minimalist BAKE. storefront redesign.
+- Integration of six bakery product images.
+- Final application screenshots and GitHub submission evidence.
+
+The complete source code and development history are available in this GitHub repository.
 
 ## Scope and Limitations
 

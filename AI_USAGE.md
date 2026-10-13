@@ -110,7 +110,7 @@ It also provided testing instructions for the New Transaction function.
 
 ### My Evaluation
 
-**Result: Correct for the identified validation improvement.**
+**Result: Correct for the identified validation improvement.**  
 
 The revised validation checks distinguish negative payments from other invalid input and preserve the existing checkout and receipt functionality.
 

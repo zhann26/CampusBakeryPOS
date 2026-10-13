@@ -192,7 +192,7 @@ function showCart() {
 }
 
 // PAYMENT VALIDATION AND CONFIRMATION
-
+ 
 function confirmPayment() {
   const message = document.getElementById("message");
   const cashInput = document.getElementById("cash");
@@ -217,21 +217,27 @@ function confirmPayment() {
     return;
   }
 
-  // Accept only positive currency values with up to two decimals.
-  if (!/^\d+(\.\d{1,2})?$/.test(raw)) {
-    message.textContent = "Enter a valid amount with up to 2 decimal places.";
-    return;
-  }
-
   const cash = Number(raw);
 
-  if (!Number.isFinite(cash) || !Number.isSafeInteger(Math.round(cash * 100))) {
+  if (!Number.isFinite(cash)) {
     message.textContent = "Invalid payment amount.";
     return;
   }
 
   if (cash < 0) {
     message.textContent = "Payment cannot be negative.";
+    return;
+  }
+
+  if (!/^\d+(\.\d{1,2})?$/.test(raw)) {
+    message.textContent =
+      "Enter a valid amount with up to 2 decimal places.";
+    return;
+  }
+
+  if (cash > 1000000) {
+    message.textContent =
+      "Payment exceeds the allowed maximum of ₱1,000,000.00.";
     return;
   }
 
@@ -257,8 +263,12 @@ function confirmPayment() {
   showProducts();
 
   document.getElementById("receipt-section")
-    .scrollIntoView({ behavior: "smooth", block: "start" });
+    .scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
 }
+
 
 // GENERATE DIGITAL RECEIPT
 

@@ -10,6 +10,9 @@ Campus Bakery POS is a web-based point-of-sale application designed to process b
 
 The application uses HTML, CSS, and JavaScript and does not require a database or backend server.
 
+The application features a modern, minimalist bakery storefront design branded as BAKE. It uses warm neutral colors, elegant typography, product photographs, and a responsive layout to provide a clean and user-friendly point-of-sale experience.
+
+
 ## Technologies Used
 
 - **HTML5** — Application structure and interface elements
@@ -71,13 +74,27 @@ The application uses HTML, CSS, and JavaScript and does not require a database o
 ## Project Structure
 
 ```text
-CampusBakeryPOS/
+
+Campus Bakery POS/
 ├── index.html
 ├── style.css
 ├── script.js
 ├── README.md
 ├── AI_USAGE.md
+├── images/
+│   ├── pandesal.jpg
+│   ├── ensaymada.jpg
+│   ├── spanish-bread.jpg
+│   ├── cupcake.jpg
+│   ├── loaf-bread.jpg
+│   └── coffee.jpg
 └── screenshots/
+    ├── 01-product-catalog.png
+    ├── 02-shopping-cart.png
+    ├── 03-payment-validation.png
+    ├── 04-digital-receipt.png
+    └── 05-github-commits.png
+
 ```
 
 The `screenshots/` folder will contain evidence of the completed application and GitHub commit history.

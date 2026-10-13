@@ -135,3 +135,27 @@ The final application uses HTML, CSS, and JavaScript and implements the requirem
 AI was used as a development assistant. The project was assembled, tested, and managed through the development workflow, including local Git commits and GitHub repository updates.
 
 The developer remains responsible for understanding the source code, verifying system behavior, correcting errors, and submitting the completed application.
+
+## AI Interaction 4 — Minimalist UI Redesign
+
+### Prompt Used
+
+"before we will going to upload screenshots, first we will change the UI design, make it minimalist, trendy, and dont add too much icons, a unique website. tell me what to modify, edit, prompt in terminal. step by step."
+
+### Purpose
+
+To improve the original POS dashboard with a minimalist, modern bakery website design before capturing the final submission screenshots.
+
+### AI Response
+
+ChatGPT provided a redesigned HTML structure, a complete CSS stylesheet, instructions for adding bakery product images, and Git commands to protect and commit the changes.
+
+### My Evaluation
+
+**Result: Correct for the requested redesign, subject to final functional testing.**
+
+The redesigned interface retained the existing JavaScript element IDs, allowing the product catalog, shopping cart, checkout, and receipt functions to remain connected.
+
+### Modifications Made
+
+I replaced the previous HTML and CSS, added product image references to JavaScript, created an images folder, and included bakery product photographs. I also created a Git backup branch before making changes and committed the redesigned application.
